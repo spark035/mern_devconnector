@@ -180,7 +180,7 @@ router.post(
         user: req.user.id,
       };
 
-      post.commments.unshift(newComment);
+      post.comments.unshift(newComment);
 
       await post.save();
 
@@ -210,7 +210,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     );
 
     // Make sure commment exists
-    if (!commment) {
+    if (!comment) {
       return res.status(404).json({ msg: 'Comment does not exist' });
     }
 
